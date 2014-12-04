@@ -1,4 +1,4 @@
-rrequire 'test_helper'
+require 'test_helper'
 
 class StaticPagesControllerTest < ActionController::TestCase
 
