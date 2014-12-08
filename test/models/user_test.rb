@@ -3,12 +3,8 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   def setup
-<<<<<<< HEAD
-    @user = User.new(name: "Example User", email: "user@example.com")
-=======
     @user = User.new(name: "Example User", email: "user@example.com", 
     	             password: "foobar", password_confirmation: "foobar")
->>>>>>> master
   end
 
   test "should be valid" do
@@ -25,11 +21,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-<<<<<<< HEAD
-    test "name should not be too long" do
-=======
   test "name should not be too long" do
->>>>>>> master
     @user.name = "a" * 51
     assert_not @user.valid?
   end
@@ -50,20 +42,12 @@ class UserTest < ActiveSupport::TestCase
 
   test "email validation should reject invalid addresses" do
     invalid_addresses = %w[user@example,com user_at_foo.org user.name@example.
-<<<<<<< HEAD
-                           foo@bar_baz.com foo@bar+baz.com]
-=======
-                           foo@bar_baz.com foo@bar+baz.com user@example..com]
->>>>>>> master
+                           foo@bar_baz.com foo@bar+baz.com user@example.com]
     invalid_addresses.each do |invalid_address|
       @user.email = invalid_address
       assert_not @user.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
-<<<<<<< HEAD
-end
-
-=======
 
   test "email addresses should be unique" do
     duplicate_user = @user.dup
@@ -83,9 +67,4 @@ end
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
->>>>>>> master
-
-  # test "the truth" do
-  #   assert true
-  # end
 end
